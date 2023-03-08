@@ -186,8 +186,6 @@ void Process_Command(char *command)
         if (strcmp(cmd, "pulse") == 0)
         {
             snprintf((char *)tx_buf, BUF_SIZE, "OK\r\n");
-            uint16_t pin = 0;
-            uint16_t duty = 0;
             if (isdigit(args[0]))
             {
                 argi = strtol(args, (char *)NULL, 10);
@@ -230,12 +228,12 @@ void Process_Command(char *command)
         {
             if (strcmp(args, "on") == 0)
             {
-                snprintf((char *)tx_buf, BUF_SIZE, "trigger on\r\n"); // adc_buf[1]
+                snprintf((char *)tx_buf, BUF_SIZE, "trigger on\r\n");
                 _pwm_out_trigger(ON);
             }
             else if (strcmp(args, "off") == 0)
             {
-                snprintf((char *)tx_buf, BUF_SIZE, "trigger off\r\n"); // adc_buf[0]
+                snprintf((char *)tx_buf, BUF_SIZE, "trigger off\r\n");
                 _pwm_out_trigger(OFF);
             }
             else
@@ -248,12 +246,12 @@ void Process_Command(char *command)
         {
             if (strcmp(args, "off") == 0)
             {
-                snprintf((char *)tx_buf, BUF_SIZE, "wake\r\n"); // adc_buf[1]
+                snprintf((char *)tx_buf, BUF_SIZE, "wake\r\n");
                 _pwm_sleep(wake);
             }
             else if (strcmp(args, "on") == 0)
             {
-                snprintf((char *)tx_buf, BUF_SIZE, "sleep\r\n"); // adc_buf[0]
+                snprintf((char *)tx_buf, BUF_SIZE, "sleep\r\n");
                 _pwm_sleep(sleep);
             }
             else
@@ -271,8 +269,7 @@ void Process_Command(char *command)
                 if (argi >= 24 && argi <= 1526)
                 {
                     _pwm_set_freq(argi);
-                    /*					ledPWM = argi;
-                                        __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, ledPWM * 100);*/
+                    /*					set freqency*/
                     snprintf((char *)tx_buf, BUF_SIZE, "OK\r\n");
                 }
                 else
