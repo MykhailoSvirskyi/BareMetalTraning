@@ -2,8 +2,7 @@
 #include "usart.h"
 #include <string.h>
 
-void
-_LED_STATUS (GPIO_TypeDef *gPIOx, uint16_t gPIO_Pin)
+void _LED_STATUS (GPIO_TypeDef *gPIOx, uint16_t gPIO_Pin)
 {
 
   char gpioBLUE[] = "BLUE LED";
@@ -64,8 +63,7 @@ _LED_STATUS (GPIO_TypeDef *gPIOx, uint16_t gPIO_Pin)
   HAL_UART_Transmit (&huart3, "\r\n", 2, 100);
 }
 
-void
-_Button_reader (uint16_t GPIO)
+void _Button_reader (uint16_t GPIO)
 {
 
   switch (GPIO)
