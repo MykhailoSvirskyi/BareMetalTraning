@@ -69,3 +69,4 @@ every 5 seconds in terminal printed temperature like this:
 if the temperature is lower then 0C degrees, the terminal printed, determining negative degree of Celsius not written.
 >temperature =-88 C
 
+[![Bare Metal test 5 video]()](https://drive.google.com/file/d/11urTKfJvDKnDuyKXdZQLrC7fhpkarkKn/view?usp=share_link "Bare Metal test 5")
