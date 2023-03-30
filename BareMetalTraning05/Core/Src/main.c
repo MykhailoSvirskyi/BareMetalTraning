@@ -33,7 +33,8 @@
 #define ADC_0C (2.02*ADC_STEP)
 #define ADC_minus_24C (2.52*ADC_STEP)
 #define ADC_100C_0C_coef ((ADC_0C)/100)
-#define ADC_TO_CELSIUS(adc) ((adc)<(ADC_0C))? (110-((adc)/(ADC_100C_0C_coef))):(-88)//if ADC<2.02v t=0C, and  adc=0.02v t=99C
+#define temp_corect 10 //corection temperature
+#define ADC_TO_CELSIUS(adc) ((adc)<(ADC_0C))? (100+(temp_corect)-((adc)/(ADC_100C_0C_coef))):(-88)//if ADC<2.02v t=0C, and  adc=0.02v t=99C
 //If the return -88 range ADC dropped below 0C
 #define temp_time_every_ms 5000 //send temperature every 5s;
 /* USER CODE END Includes */
