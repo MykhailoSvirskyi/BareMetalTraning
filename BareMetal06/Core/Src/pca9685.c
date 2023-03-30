@@ -6,6 +6,8 @@
 #include "pca9685.h"
 #define OSC_CLOCK 25000000 // osc clock internal
 #define one_percent 40.96
+#define OE_PORT GPIOB
+#define OE_PIN  GPIO_PIN_7
 uint8_t dewId = 0x80; // default address
 #define LED_ON(start_delay) (((start_delay) * (one_percent)) - 1)
 #define LED_OFF(duty, led_on) (((duty) * (one_percent)) + (led_on)-1)
@@ -141,10 +143,10 @@ void _pwm_out_trigger(TRIGG status) // turn OFF/ON all pwm pin
 {
     if (status == OFF)
     {
-        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(OE_PORT, OE_PIN, GPIO_PIN_SET);
     }
     else
     {
-        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GOE_PORT, OE_PIN, GPIO_PIN_RESET);
     }
 };
