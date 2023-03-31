@@ -118,3 +118,5 @@ This function is HIGH-SPEED-READ FLASH address from **address** and second 5 byt
 + open session and press a black button on Discovery board, if all done you see massage <br> *init spi flash OK: <br>comand: <br> **read, erase, write, block***
 if flash not response you see <br>*init spi flash ERROR:*
 + You can write in the terminal this command and have a result.
+## TEST VIDEO
+[bare metal test 07](https://drive.google.com/file/d/1RPCpbdCiq8guEHR2j3Ep79Pnv3PHwD1r/view?usp=share_link)
